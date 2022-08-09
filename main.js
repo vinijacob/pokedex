@@ -1,4 +1,4 @@
-let pokeNumber = 4
+let pokeNumber = 200
 let url = `https://pokeapi.co/api/v2/pokemon/${pokeNumber}`
 
 console.log(url)
@@ -20,20 +20,19 @@ function getPokemon() {
         let img = data['sprites']['front_default']
         document.querySelector('.poke_img').setAttribute('src', img)
     })
+}
 
+document.querySelector('.btn_forw').addEventListener('click', () => {
+    pokeNumber++
+    console.log(url)
+    console.log(pokeNumber)
+})
 
+document.querySelector('.btn_backw').onclick = () => {
+    pokeNumber--
+    console.log(url)
+    console.log(pokeNumber)
 }
 
 getPokemon()
-
-document.querySelector('.btn_forw').onclick = () => {
-    console.log(url)
-    pokeNumber++;
-    console.log(pokeNumber)
-}
-
-document.querySelector('.btn_backw').onclick = () => {
-    console.log(url)
-    pokeNumber--;
-    console.log(pokeNumber)
-}
+changePokemon()
