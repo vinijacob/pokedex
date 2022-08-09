@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: Pokedex;
+    src: url(./font/Pokemon\ Solid.ttf);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Pokedex';
+    font-weight: lighter;
+}
+
+.pokedex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    background-color: #E3814E;
+
+    box-shadow: 10px 5px 10px #F2D013;
+    border-radius: 10px;
+
+
+    margin-top: 15%;
+    width: 15rem;
+}
+
+.poke_info {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.poke_nav button {
+    width: 50px;
+    height: 50px;
+
+    background-color: red;
+    border: none;
+    border-radius: 10px;
+
+    cursor: pointer;
+}
