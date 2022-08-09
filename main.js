@@ -27,12 +27,14 @@ document.querySelector('.btn_forw').addEventListener('click', () => {
     pokeNumber++
     console.log(url)
     console.log(pokeNumber)
+    getPokemon()
 })
 
 document.querySelector('.btn_backw').onclick = () => {
     pokeNumber--
     console.log(url)
     console.log(pokeNumber)
+    getPokemon()
 }
 
 getPokemon()
