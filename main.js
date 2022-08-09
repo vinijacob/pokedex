@@ -1,7 +1,6 @@
 let pokeNumber = 4
 let url = `https://pokeapi.co/api/v2/pokemon/${pokeNumber}`
 
-console.log(url)
 
 function getPokemon() {
     fetch(url)
@@ -10,7 +9,7 @@ function getPokemon() {
     })
 
     .then((data) => {
-        console.clear()
+        // console.clear()
         console.log(data)
 
         document.querySelector('.poke_name').innerHTML = data['name'].toUpperCase()
@@ -22,16 +21,17 @@ function getPokemon() {
     })
 }
 
+
 document.querySelector('.btn_forw').addEventListener('click', () => {
     pokeNumber++
     console.log(url)
     console.log(pokeNumber)
 })
 
-document.querySelector('.btn_backw').onclick = () => {
+document.querySelector('.btn_backw').addEventListener('click', () => {
     pokeNumber--
     console.log(url)
     console.log(pokeNumber)
-}
+})
 
 getPokemon()

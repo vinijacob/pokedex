@@ -31,7 +31,8 @@ h1 {
     align-items: center;
 
 
-    background-color: #E3814E;
+    background: linear-gradient(to right, #a8ff78, #78ffd6);
+    /* background-color: #E3814E; */
 
     box-shadow: 10px 5px;
     border-radius: 10px;
