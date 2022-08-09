@@ -1,4 +1,4 @@
-let pokeNumber = 2
+let pokeNumber = 4
 let url = `https://pokeapi.co/api/v2/pokemon/${pokeNumber}`
 
 console.log(url)
