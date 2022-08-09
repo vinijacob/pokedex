@@ -67,3 +67,8 @@ h1 {
     box-shadow: 1px 1px black;
 
 }
+
+.poke_img {
+    margin: 2rem;
+    scale: 1.1;
+}

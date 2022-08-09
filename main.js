@@ -1,9 +1,8 @@
-let pokeNumber = 4
-let url = `https://pokeapi.co/api/v2/pokemon/${pokeNumber}`
+let pokeNumber = 1
 
 
-function getPokemon() {
-    fetch(url)
+function getPokemon(el) {
+    fetch(`https://pokeapi.co/api/v2/pokemon/${el}`)
     .then((response) => {
         return response.json();
     })
@@ -16,22 +15,28 @@ function getPokemon() {
         document.querySelector('.poke__peso').innerHTML = `Peso: ${data['weight']}kg`
         document.querySelector('.poke__altura').innerHTML = `Altura: ${data['height']}m`
 
-        let img = data['sprites']['front_default']
+        let img = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default']
         document.querySelector('.poke_img').setAttribute('src', img)
     })
 }
 
+getPokemon(pokeNumber)
 
 document.querySelector('.btn_forw').addEventListener('click', () => {
     pokeNumber++
-    console.log(url)
-    console.log(pokeNumber)
+    getPokemon(pokeNumber)
+    if (pokeNumber > 905) {
+        alert('Não há pokemons neste número')
+        pokeNumber = 905;
+    }
 })
+
 
 document.querySelector('.btn_backw').addEventListener('click', () => {
     pokeNumber--
-    console.log(url)
-    console.log(pokeNumber)
+    getPokemon(pokeNumber)
+    if (pokeNumber <= 0) {
+        alert('Não há pokemons neste número')
+        pokeNumber = 1;
+    }
 })
-
-getPokemon()
