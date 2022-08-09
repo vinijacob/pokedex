@@ -1,5 +1,4 @@
-
-let pokeNumber = 200
+let pokeNumber = 4
 let url = `https://pokeapi.co/api/v2/pokemon/${pokeNumber}`
 
 console.log(url)
@@ -27,15 +26,12 @@ document.querySelector('.btn_forw').addEventListener('click', () => {
     pokeNumber++
     console.log(url)
     console.log(pokeNumber)
-    getPokemon()
 })
 
 document.querySelector('.btn_backw').onclick = () => {
     pokeNumber--
     console.log(url)
     console.log(pokeNumber)
-    getPokemon()
 }
 
 getPokemon()
-changePokemon()
