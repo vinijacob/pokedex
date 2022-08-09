@@ -1,4 +1,6 @@
 let pokeNumber = 1
+let pokeName = 'bulbasaur'
+
 
 
 function getPokemon(el) {
@@ -14,6 +16,7 @@ function getPokemon(el) {
         document.querySelector('.poke_name').innerHTML = data['name'].toUpperCase()
         document.querySelector('.poke__peso').innerHTML = `Peso: ${data['weight']}kg`
         document.querySelector('.poke__altura').innerHTML = `Altura: ${data['height']}m`
+        document.querySelector('.move').innerHTML = `Golpe principal: ${data['moves'][0]['move']['name'].toUpperCase()}`
 
         let img = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default']
         document.querySelector('.poke_img').setAttribute('src', img)
