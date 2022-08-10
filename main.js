@@ -1,5 +1,6 @@
-let pokeNumber = 1
+let pokeNumber = 25
 let pokeName = 'bulbasaur'
+let input = document.querySelector('.input__search')
 
 
 
@@ -10,22 +11,19 @@ function getPokemon(el) {
     })
 
     .then((data) => {
-        // console.clear()
         console.log(data)
 
-        document.querySelector('.poke_name').innerHTML = data['name'].toUpperCase()
-        document.querySelector('.poke__peso').innerHTML = `Peso: ${data['weight']}kg`
-        document.querySelector('.poke__altura').innerHTML = `Altura: ${data['height']}m`
-        document.querySelector('.move').innerHTML = `Golpe principal: ${data['moves'][0]['move']['name'].toUpperCase()}`
+        document.querySelector('.pokemon__name').innerHTML = data['name']
+        document.querySelector('.pokemon__number').innerHTML = data['id']
 
         let img = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default']
-        document.querySelector('.poke_img').setAttribute('src', img)
+        document.querySelector('.pokemon__image').setAttribute('src', img)
     })
 }
 
 getPokemon(pokeNumber)
 
-document.querySelector('.btn_forw').addEventListener('click', () => {
+document.querySelector('.btn-next').addEventListener('click', () => {
     pokeNumber++
     getPokemon(pokeNumber)
     if (pokeNumber > 905) {
@@ -35,7 +33,7 @@ document.querySelector('.btn_forw').addEventListener('click', () => {
 })
 
 
-document.querySelector('.btn_backw').addEventListener('click', () => {
+document.querySelector('.btn-prev').addEventListener('click', () => {
     pokeNumber--
     getPokemon(pokeNumber)
     if (pokeNumber <= 0) {

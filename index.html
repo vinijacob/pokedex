@@ -8,26 +8,34 @@
     
     <link rel="stylesheet" href="./style.css">
 
-    <title>Pokedex</title>
+    <title>Pokédex</title>
 </head>
 <body>
-    <div class="pokedex">
-        <h1 class="poke_name">Nome</h1>
-        <img src="" alt="" class="poke_img">
+    <main>
+        <img src="" alt="pokemon" class="pokemon__image">
 
-        <div class="poke_info">
-            <h3 class="poke__peso">30 kg</h3>
-            <h3 class="poke__altura">4 m</h3>
+        <h1 class="pokemon__data">
+            <span class="pokemon__number">6</span> - 
+            <span class="pokemon__name">charizard</span>
+        </h1>
+
+        <form class="form">
+            <input 
+            type="search"
+            class="input__search"
+            placeholder="Name or Number"
+            required
+            />
+        </form>
+
+        <div class="buttons">
+            <button class="button btn-prev"> Prev &lt;</button>
+            <button class="button btn-next"> Next &gt;</button>
         </div>
 
-        <p class="move">Golpe principal</p>
 
-        <input type="text" name="search-bar" id="search-bar">
-        <div class="poke_nav">
-            <button class="btn_backw"><img src="./icons/right-arrow.png" alt="" style="transform: rotate(180deg);"></button>
-            <button class="btn_forw"><img src="./icons/right-arrow.png" alt=""></button>
-        </div>
-    </div>
+        <img src="./imgs/pokedex.png" class="pokedex" alt="">
+    </main>
     <script src="./main.js"></script>
 </body>
 </html>
